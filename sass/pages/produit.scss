@@ -1,0 +1,35 @@
+  #choix_option
+  {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  .button_panier{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 2rem;
+     }
+  #ajout_panier {
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    background-color: white;
+    &:hover {
+      cursor: pointer;
+      color: $color-hover;
+    }
+  }
+
+
+
+
+
+
+#marron{
+    color: rgb(95, 57, 14);
+}
+#sable{
+    color: rgb(252, 194, 127)
+}
+#noir{
+    color: black;
+}

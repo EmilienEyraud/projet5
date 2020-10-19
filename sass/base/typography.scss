@@ -1,0 +1,15 @@
+@font-face {
+    font-family : 'alexbrush';
+    src: url(../fonts/AlexBrush-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;}
+
+@font-face {
+        font-family : 'allura';
+        src: url(../fonts/Allura-Regular.otf) format('opentype'),
+             url(../fonts/Allura-Regular-webfont.eot)format('embedded-opentype');
+        font-weight: normal;
+        font-style: normal;}
+
+
+$font-family : "alexbrush, allura";

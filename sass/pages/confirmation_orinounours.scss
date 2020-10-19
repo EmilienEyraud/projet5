@@ -1,0 +1,23 @@
+#panier-recap,
+  #confirmation-recap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-content: center;
+    vertical-align: middle;
+    box-shadow: 0 0 1em $color-information-price;
+    border: 2px solid $color-primary;
+    background-color: $color-background;
+    width: 80%;
+  }
+
+  .confirmation h2 {
+    text-align: center;
+  }
+  .textConfirm {
+    font-size: 1.3rem;
+  }
+  #orderId {
+    color: $color-valid;
+  }

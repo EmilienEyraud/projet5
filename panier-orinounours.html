@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Panier - Orinounours, Ours en peluche made in France</title>
+        <meta name="description" content="Ours en peluche faits à la main de qualité Française."/>
+        <meta name="robots" content="index, follow" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>
+    
+        <link rel=”canonical” href="https://orinounours.fr/">
+        <link rel="shortcut icon" type="image/png" href="./css/images/IconeOurs.jpg" />
+
+        <!-- Analytics -->
+        <!-- Partage de contenu sur Facebook -->
+        <meta property="og:title" content="Ours en peluche faits à la main - Orinounours by Orinoco"/>
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://orinounours.fr/"/>
+        <meta property="og:site_name" content="Orinounours by Orinoco" />
+        <meta property="og:image" content="./css/images/IconeOurs.jpg"/>
+        <meta property="og:description" content="Vente en ligne d'ours en peluche faits à la main de qualité Française." />
+        <!-- Fin balises OpenGraph pour Facebook -->
+
+        <!-- Partage de contenu sur Twitter -->
+		<meta name="twitter:card" content="Ours en peluche faits à la main - Orinounours by Orinoco"/>
+		<meta name="twitter:site" content="@orinounours" />
+		<meta name="twitter:url" content="https://orinounours.fr/"/>
+		<meta name="twitter:description" content="Ours en peluche faits à la main - Orinounours by Orinoco"/>
+		<meta name="twitter:title" content="Vente en ligne d'ours en peluche faits à la main de qualité Française."/>
+		<meta name="twitter:image" content="./css/images/IconeOurs.jpg"/>
+		<!-- Fin balises Twitter cards pour Twitter -->
+        <!-- Analytics END -->
+
+    <link rel="stylesheet" type="text/css" href="./css/style.css" />
+    <link rel="stylesheet" type="text/css" href="./css/media.css" /> <!--Responsivité-->
+  </head>
+
+
+  <body>
+    <div class="page-container">
+      <header>
+        <div class="header">
+          <div>
+          <a href="index.html" id="accueil">
+            <img src="css/images/logoOrinoco.png" alt="Logo Orinoco"/>
+          </a>
+          </div>
+          <nav>
+            <div class="header-lien">
+              <ul class="header-navigation">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html" id="acceuil">Acceuil</a> 
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="produit.html" id="boutique">Boutique</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="confirmation-orinounours.html" id="commande">Commande</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="panier-orinounours.html">
+                    <i class="fas fa-shopping-cart fa-1x"></i>Panier (<span
+                      id="indexPanier"
+                    ></span
+                    >)</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </header>
+
+      <main>
+        <section class="recapitulatif">
+          <h2>Récapitulatif de votre commande</h2>
+          <p>
+            Veuillez vérifier votre commande ci-dessous avant de valider le
+            paiement.
+          </p>
+          <div id="panier-recap">
+            <p id="panierVide">Votre panier est vide</p>
+          </div>
+        </section>
+        <section class="formulaire_commande">
+          <h2>Validez votre commande</h2>
+          <div class="cadre">
+            <form method="post" name="formContact" id="form_1" action="traitement.php">
+              <div class="form-group">
+                <label for="nom"> Nom de famille </label>
+                <input type="text" id="nom" name="nom" class="form-control" placeholder="Ex : Dupont"required autofocus/></p>
+               </div> 
+              <div class="form-group">
+                <label for="prenom"> Prénom </label>
+                <input type="text" id="prenom" name="prenom"class="form-control" placeholder="Ex : Michel" required />
+              </div>
+              <div class="form-group">
+                <label for="email"> Adresse email </label>
+                <input type="email" id="email"  name="email" class="form-control" placeholder="Entrez une adresse mail valide" required/>
+              </div>
+              <div class="form-group">
+                <label for="adresse"> Adresse postale et de facturation </label>
+                <input type="text" id="adresse" name="adresse" class="form-control"placeholder="Ex: 3 Rue du Stade" required/>             </div>
+              <div class="form-group">
+                <label for="code_postal">Code Postal</label>
+                <input type="text" id="code_postal" name="code_postal" class="form-control" placeholder="Ex: 75000" size="5" maxlength="5"required>
+                <label for="ville"> Ville </label>
+                <input type="text" id="ville" name="ville" class="form-control" placeholder="Ex: Paris" required />
+              </div>
+              <div class="form-group">
+                <label> Choix du moyen de paiement</label>
+                <div id="carte">
+                  <input type="radio" class="paiement" name="identifieur" value="Visa" checked/>
+                  <i class="fab fa-cc-visa fa-2x"></i>
+                  <input type="radio" class="paiement" name="identifieur" value="Mastercard"/>
+                  <i class="fab fa-cc-mastercard fa-2x"></i>
+                  <input type="radio" class="paiement" name="identifieur" value="Paypal"/>
+                  <i class="fab fa-cc-paypal fa-2x"></i>
+                </div>
+              </div>
+
+              <button id="commander" type="submit" name="commander">
+                Commander
+              </button>
+            </form>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="footer">
+            <div class="footer1">
+                <a href="index.html" id="accueil">
+                <img src="css/images/IconeOurs.jpg" alt="Icone Ours"/></a>  
+                <p>Copyright © 2020 Orinounours by Orinoco - Tous droits réservés</p>
+            </div>   
+            <div class="footer2">
+                <ul class="nav-item">
+                <a class="nav-link" href="https://groupe-socom.fr" id="creation">Une Création Groupe Socom</a>
+                </ul>
+                <ul class="nav-item">
+                 <a class="nav-link" href="mentions_legales.html" id="mentions_legales">Mentions Légales</a>
+                </ul>
+            </div>
+        </div>
+      </footer>
+     
+      <!--Scipt JS-->
+      <script src="script.js"></script>
+      <!--Script FontAwesome-->
+      <script src="https://kit.fontawesome.com/ffb09557c8.js" crossorigin="anonymous"></script>
+    </div>
+      <!--Script Bootstrap-->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>

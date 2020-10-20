@@ -43,7 +43,7 @@ function displayProductList(teddies) {
   const listContainer = document.createElement("div")
   listContainer.style.border = "1px solid gray"
   listContainer.setAttribute("class", "produit_contenant")
-  for (let teddies of teddies) {
+  for (let teddy of teddies) {
     const itemContainer = displayProductItem(teddies)
     listContainer.appendChild(itemContainer)
   }
@@ -64,14 +64,14 @@ function displayProductItem (teddies) {
   return itemContainer
 }
 //titre produit
-function displayProductTitle(teddies) {
+function displayProductTitle(teddy) {
   const productTitle = document.createElement('h2');
   productTitle.setAttribute("class", "produit_nom");
   productTitle.textContent = teddy.name;
   return productTitle
 }
 //photo produit
-function displayProductPicture(teddies) {
+function displayProductPicture(teddy) {
   const productPicture = document.createElement ('img');
   productPicture.setAttribute("src", teddy.imageUrl);
   productPicture.setAttribute('alt', 'Photo Ours en Peluche');
@@ -79,14 +79,14 @@ function displayProductPicture(teddies) {
   return productPicture
 }
 //prix produit
-function displayProductPrice(teddies) {
+function displayProductPrice(teddy) {
   const productPrice = document.createElement("p");
   productPrice.setAttribute("class", "produit_prix");
   productPrice.textContent = teddy.price / 100 + "€";
   return productPrice
 }
 //lien vers page produit
-function displayProductLink(teddies) {
+function displayProductLink(teddy) {
   const productLink = document.createElement ('a');
   productLink.setAttribute("href", "produit.html?id=" + teddy._id);
   productLink.textContent =  'En savoir Plus';

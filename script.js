@@ -7,6 +7,9 @@ getAllTeddies = () => {
         resolve(JSON.parse(this.responseText));
         console.log("Connecté");
       }
+      else{
+        
+      }
     };
     request.open("GET", "http://localhost:3000/api/teddies");
     request.send();
@@ -92,3 +95,5 @@ function displayProductLink(teddy) {
   productLink.textContent =  'En savoir Plus';
   return productLink
 }
+
+//PAGE DETAIL PRODUIT

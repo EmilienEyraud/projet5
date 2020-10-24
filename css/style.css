@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @font-face {
   font-family: "alexbrush";
   src: url(../fonts/AlexBrush-Regular.ttf) format("truetype");
@@ -11,6 +10,30 @@
   font-weight: normal;
   font-style: normal;
 }
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 1rem;
+}
+.header .header-navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+  padding-left: 0;
+}
+.header .header-navigation .nav-item {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+main {
+  background-image: url("./images/background.jpg");
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -29,34 +52,27 @@ a:hover {
   cursor: pointer;
 }
 
-.header,
-.header_produit {
+.footer {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  margin-top: 1rem;
-}
-.header .header-orinounours,
-.header_produit .header-orinounours {
+  justify-content: space-around;
   text-align: center;
-  color: black;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  font-size: 0.8rem;
 }
-.header .header-navigation,
-.header_produit .header-navigation {
+
+.footer1 {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  list-style: none;
-  padding-left: 0;
 }
-.header .header-navigation .nav-item,
-.header_produit .header-navigation .nav-item {
-  margin-left: 2rem;
-  margin-right: 2rem;
+
+.footer2 {
+  display: flex;
+  flex-direction: row;
+}
+
+#listeProduit h2 {
+  text-align: center;
+  padding-bottom: 15px;
 }
 
 .banniere-presentation {
@@ -65,107 +81,74 @@ a:hover {
   text-align: center;
 }
 
-main {
-  background-image: url("./images/background.jpg");
-}
-main .produit_contenant {
+.produit_contenant {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   border-top: 3px solid;
   border-color: #69402d;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  margin-left: 0.8rem;
 }
-main .produit_contenant .produit_element {
-  width: 80%;
+
+.produit_illustration {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 1.4rem;
-}
-main .produit_contenant .produit_illustration {
-  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  text-align: center;
   align-items: center;
 }
-main .detail_contenant {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-main .detail_contenant .detail_illustration {
-  display: flex;
-  align-items: center;
-  margin: 2em 2em 2em 2em;
-}
-main .detail_contenant .detail_illustration img {
-  width: 400px;
-  height: auto;
+.produit_illustration img {
+  width: 250px;
+  height: 145px;
   -webkit-transform: scale(1);
   transform: scale(1);
   -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
-main .detail_contenant .detail_illustration img:hover {
+.produit_illustration img:hover {
   -webkit-transform: scale(1.3);
   transform: scale(1.3);
 }
-main .detail_contenant .detail_description {
-  width: 95%;
+.produit_illustration .produit_prix {
+  font-size: 2rem;
 }
-main .detail_contenant .detail_information_prix {
-  background-color: #f5e6c6;
-  width: 60%;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  margin-right: 1rem;
-  text-align: center;
+.produit_illustration a {
+  border: 0.3rem solid;
+  padding: 1rem;
+}
+
+.legal-notice {
+  text-align: justify;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#panier-recap,
+#confirmation-recap {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  border: 2px solid #69402d;
-  font-size: 1rem;
-}
-main .detail_contenant .detail_information_prix .detail_prix {
-  font-size: 1.6rem;
-}
-
-#listeProduit h2 {
+  justify-content: space-between;
   text-align: center;
-  padding-bottom: 15px;
+  align-content: center;
+  vertical-align: middle;
+  box-shadow: 0 0 1em #f5e6c6;
+  border: 2px solid #69402d;
+  background-color: #f3ead6;
+  width: 80%;
 }
 
-.produit_nom,
-.produit_prix {
-  width: 30%;
+.confirmation h2 {
+  text-align: center;
 }
 
-#choix_option {
-  margin-bottom: 1rem;
-  width: 100%;
+.textConfirm {
+  font-size: 1.3rem;
 }
 
-.button_panier {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-right: 2rem;
-}
-
-#ajout_panier {
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  background-color: white;
-}
-#ajout_panier:hover {
-  cursor: pointer;
-  color: #a1068d;
-}
-
-table {
-  width: 100%;
+#orderId {
+  color: green;
 }
 
 .formulaire_commande,
@@ -240,76 +223,30 @@ input:focus:invalid {
   margin: auto;
 }
 
-#panier-recap,
-#confirmation-recap {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: center;
-  align-content: center;
-  vertical-align: middle;
-  box-shadow: 0 0 1em #f5e6c6;
-  border: 2px solid #69402d;
-  background-color: #f3ead6;
-  width: 80%;
+#choix_option {
+  margin-bottom: 1rem;
+  width: 100%;
 }
 
-#colonneTotal,
-#sommeTotal,
-#colonneConfirmTotal,
-#sommeConfirmTotal {
-  border: 2px solid;
-  background-color: #f5e6c6;
-  font-size: 2rem;
-}
-
-.photo_article {
-  width: 10rem;
-}
-
-.photo_article_acheté {
-  width: 7rem;
-}
-
-th,
-td {
-  font-size: 1.4rem;
-}
-
-.confirmation h2 {
-  text-align: center;
-}
-
-.textConfirm {
-  font-size: 1.3rem;
-}
-
-#orderId {
-  color: green;
-}
-
-.footer {
+.button_panier {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  text-align: center;
-  font-size: 0.8rem;
+  justify-content: flex-end;
+  margin-right: 2rem;
+  margin-top: 2rem;
+}
+.button_panier a {
+  border: 0.3rem solid;
+  padding: 1rem;
 }
 
-.footer1 {
-  display: flex;
-  flex-direction: row;
+#ajout_panier {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
-
-.footer2 {
-  display: flex;
-  flex-direction: row;
-}
-
-.legal-notice {
-  text-align: justify;
-  padding-left: 10px;
-  padding-right: 10px;
+#ajout_panier:hover {
+  cursor: pointer;
+  color: #a1068d;
 }
 
 #marron {

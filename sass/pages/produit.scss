@@ -8,15 +8,20 @@
     flex-direction: row;
     justify-content: flex-end;
     margin-right: 2rem;
+    margin-top: 2rem;
+    a {
+      border: 0.3rem solid ;
+      padding: 1rem;
+    }
      }
   #ajout_panier {
     margin-bottom: 1rem;
     font-size: 1.5rem;
-    background-color: white;
     &:hover {
       cursor: pointer;
       color: $color-hover;
     }
+    
   }
 
 

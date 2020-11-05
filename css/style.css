@@ -234,6 +234,7 @@ input:focus:invalid {
   justify-content: flex-end;
   margin-right: 2rem;
   margin-top: 2rem;
+  padding-bottom: 2rem;
 }
 .button_panier a {
   border: 0.3rem solid;

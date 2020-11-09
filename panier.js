@@ -14,14 +14,12 @@ const listObject = { // Liste de produits sous forme d'objet
 
 function addProduct(id, color) { // ajouter un produit au panier
   const panier = list();
-  panier.getElementById ('ajout_panier');
-  panier.addEventListener('click',function(){
-    panier[id] = color;
-    for(let i=0; i<panier.length; i++); //Ajout au panier
-    save(panier); 
-    console.log("Le produit a été ajouté au panier");
-    alert("Ce produit a été ajouté dans votre panier");
-  })}
+  panier[id] = color;
+  console.log(panier)
+  save(panier); 
+  console.log("Le produit a été ajouté au panier");
+  alert("Ce produit a été ajouté dans votre panier");
+  }
   
 function deleteProduct(id) { // supprimer un produit du panier
   const panier = list();
@@ -35,6 +33,7 @@ function deleteProduct(id) { // supprimer un produit du panier
     })}
  
 function save(panier) { // sauvegarder le panier dans le local storage
+  console.log (JSON.stringify(panier))
     // sauvegarder en localStorage
     localStorage.setItem('panier', JSON.stringify(panier)) //1er argument de type string qui précise où sont stockées les données
   }

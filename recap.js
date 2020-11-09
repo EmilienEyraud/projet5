@@ -1,9 +1,10 @@
 // On a vu dans le fichier panier.js que les données étainet récupérées dans le local storage du "panier"
 
-panierCreation = () => {                              
+const panierCreation = (saveProducts) => {                              
     //Création de la structure du panier
-    if (panier.length > 0) {                  
-        document.getElementById("panierVide").remove();//Suppression paragraphe 'panier vide' par défaut
+    if (Object.keys(saveProducts).length > 0) {                  
+       console.log(saveProducts) 
+       document.getElementById("panierVide").remove();//Suppression paragraphe 'panier vide' par défaut
         const recapPanier = document.getElementById('panier-recap') //lien avec la page panier-orinounours
             recapPanier.appendChild(recap)
         const recap = document.createElement('table') // Création du tableau
@@ -26,8 +27,9 @@ panierCreation = () => {
             lineTotalPrice.appendChild(totalPrice)
             const totalPrice = document.createElement ('th')
     }
+
  // Affichage des articles dans le panier - On utilise la boucle for    
-    for (let i=0; panier.length>i; i++){ 
+    for (let i=0; saveProducts.length>i; i++){ 
             const recap = document.getElementById('table')
             recap.appendChild (lineArticle)
             recap.appendChild (lineTotalArticles)
@@ -59,7 +61,11 @@ panierCreation = () => {
                  //Manque calcul de l'addition du pannier
     }
 }
-
+function init (){
+    const saveProducts = list()
+    panierCreation(saveProducts)
+}
+init()
         
       
       

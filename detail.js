@@ -27,6 +27,9 @@ async function init() {
     const productDetail = displayDetailProduct(teddy) //détail produit commandé
     rootElement.appendChild(productDetail)
     choixCouleur(teddy)
+    document.getElementById("ajout_panier").addEventListener("click",()=>{addProduct(id, document.getElementById("choix_option").value)
+    })
+  
   }
   init();
 

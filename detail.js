@@ -23,7 +23,7 @@ async function init() {
     console.log (id)
     const teddy = await getOneTeddy(id);
     console.log(teddy)
-    const rootElement = document.getElementById('detailProduit')//lien avec la page index
+    const rootElement = document.getElementById('detailProduit')//lien avec la page produit
     const productDetail = displayDetailProduct(teddy) //détail produit commandé
     rootElement.appendChild(productDetail)
     choixCouleur(teddy)

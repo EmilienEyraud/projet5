@@ -100,7 +100,7 @@ const validateForm = () => {
 //ENVOI FORMULAIRE
 const sendOrder = async (contact, products) => {
     let submitOrder = document.getElementById('form_1')
-    submitOrder.addEventListener('submit', (event) => {   //au click sur le bouton, on vérifie d'abord le panier
+    submitOrder.addEventListener('submit', async (event) => {   //au click sur le bouton, on vérifie d'abord le panier
         event.preventDefault()
         if (panier.length < 1) {
             alert('Votre panier est vide')
@@ -108,45 +108,46 @@ const sendOrder = async (contact, products) => {
             return false;
         }
         else {
-            return true
+            //Si le panier est validé on crée l'objet à envoyer
+            const order = {
+                contact,
+                products
+            }
+            // on se connecte avec l'API 
+            orderTeddies = () => {
+                return new Promise((resolve) => {
+                    var request = new XMLHttpRequest();
+                    request.onreadystatechange = function () {
+                        if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+                            resolve(JSON.parse(this.responseText));
+                            console.log("Connecté");
+                        }
+                        else {
+
+                        }
+                    };
+                    request.open("POST", "http://localhost:3000/api/teddies/order");
+                    request.send();
+                });
+            };
+           const validateOrder = JSON.stringify(order);
+           const confirmationData =  await orderTeddies (validateOrder) // récupère les éléménents envoyés à  l'API
+           localStorage.setItem('order', JSON.stringify(confirmationData)) // Sauvegarde des éléments dans le local storage
+            validateOrder = displayConfirmLink
+            //lien vers page produit
+                document.location.href= "confirmation-orinounours" // 
+                const confirmLink = document.createElement('a');
+                confirmLink.setAttribute("href/confirmation-orinounours");
+                console.log('Merci pour votre commande - Vous allez être redirigé vers la page de confirmation')
+                return confirmLink
+        
+
+            //Une fois la commande effectuée retour à l'état initial des tableaux/objet/localStorage
+            contact = {};
+            products = [];
+            localStorage.clear();
         }
     })
-
-    // Si le panier est validé on crée l'objet à envoyer
-    const order = {
-        contact,
-        products
-    }
-    // on se connecte avec l'API 
-    orderTeddies = () => {
-        return new Promise((resolve) => {
-            var request = new XMLHttpRequest();
-            request.onreadystatechange = function () {
-                if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
-                    resolve(JSON.parse(this.responseText));
-                    console.log("Connecté");
-                }
-                else {
-
-                }
-            };
-            request.open("POST", "http://localhost:3000/api/teddies/order");
-            request.send();
-        });
-    };
-    const validateOrder = JSON.stringify(order);
-    sendOrder(validateOrder)
-    validateOrder = displayConfirmLink
-    //lien vers page produit
-    function displayConfirmLink() {
-        const confirmLink = document.createElement('a');
-        confirmLink.setAttribute("href/confirmation-orinounours");
-        console.log('Merci pour votre commande - Vous allez être redirigé vers la page de confirmation')
-        return confirmLink
-    }
-
-    //Une fois la commande effectuée retour à l'état initial des tableaux/objet/localStorage
-    contact = {};
-    products = [];
-    localStorage.clear();
 }
+sendOrder()
+

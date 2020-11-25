@@ -39,9 +39,11 @@ async function init() {
     displayShoppingCard(productsList)// On a vu dans le fichier panier.js que les données étaient récupérées dans le local storage du "panier"
    
     const order = document.getElementById('form_1');
-    order.addEventListener('submit', async (validOrder) => {
-    const formData = validateForm()
-    await sendOrder (formData, Object.keys (productsFromShoppingCard))
+    order.addEventListener('submit', async (event) => {
+        event.preventDefault()
+        const formData = validateForm()
+        console.log(formData)
+        await sendOrder (formData, Object.keys (productsFromShoppingCard))
     
     })
 
@@ -53,7 +55,7 @@ const displayShoppingCard = (saveProducts) => {
     //Création de la structure du panier
     if (Object.keys(saveProducts).length > 0) {
         console.log(saveProducts)
-        document.getElementById("panierVide").remove();//Suppression paragraphe 'panier vide' par défaut
+        if( document.getElementById("panierVide")) document.getElementById("panierVide").remove();//Suppression paragraphe 'panier vide' par défaut
         const rootElement = document.getElementById('panier-recap')//lien avec la page index
       
         const recap = document.createElement('table') // Création du tableau
@@ -69,7 +71,6 @@ const displayShoppingCard = (saveProducts) => {
         const recapRemove = document.createElement('th') //création colonne annulation
         recapRemove.textContent = 'Prix unitaire'
         const lineTotalPrice = document.createElement('tr')
-       
         const totalPrice = document.createElement('th')
         lineTotalPrice.appendChild(totalPrice)
         rootElement.appendChild(recap)
@@ -95,6 +96,7 @@ const displayShoppingCard = (saveProducts) => {
             const deleteButton =document.createElement ('button')
             deleteButton.textContent= 'Supprimer'
             recap.appendChild(productLine)
+            
             productLine.appendChild(deleteButton)
             productLine.appendChild(productLinePhoto)
             productLine.appendChild(productLineTitle)
@@ -112,16 +114,20 @@ const displayShoppingCard = (saveProducts) => {
             totalPanier += panier.price / 100;
         });
 
+       
         const totalLine = document.createElement('tr')
         const totalLabel = document.createElement('td')
         totalLabel.textContent = "Total panier"
-        totalValue = document.createElement('td')
+        const totalValue = document.createElement('td')
         totalValue.textContent = totalPanier + '€'
+        
+        recap.appendChild(totalLine)
         totalLine.appendChild(totalLabel)
         totalLine.appendChild(totalValue)
         // Affichage du prix à payer dans le panier
         document.getElementById('totalPrice')
         document.textContent = totalPanier + '€'
     }
-}       
+        
+}   
 

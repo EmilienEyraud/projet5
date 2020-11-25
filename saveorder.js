@@ -1,4 +1,3 @@
-
 // Préparation à l'envoi de la commande 
 
 // FORMULAIRE//
@@ -10,7 +9,7 @@ const validateForm = () => {
     const checkMail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     const checkSpecialCharacter = /[§!@#$%^&*().?":{}|<>]/;
 
-    const checkMessage = '';
+    let checkMessage = '';
 
 
     //Récupérer les éléments du formulaire :
@@ -87,22 +86,19 @@ const validateForm = () => {
 
     // Construction de l'objet contact
     const contact = {
-        nom: lastName,
-        prenom: firstName,
+        lastName: lastName,
+        firstName: firstName,
         email: email,
-        adresse: adress,
-        codePostal: postalCode,
-        ville: city
+        address: adress,
+        //codePostal: postalCode,
+        city: city
     };
     return contact
 }
 
 //ENVOI FORMULAIRE
 const sendOrder = async (contact, products) => {
-    let submitOrder = document.getElementById('form_1')
-    submitOrder.addEventListener('submit', async (event) => {   //au click sur le bouton, on vérifie d'abord le panier
-        event.preventDefault()
-        if (panier.length < 1) {
+        if (products.length < 1) {
             alert('Votre panier est vide')
             console.log('Votre panier est vide')
             return false;
@@ -114,11 +110,11 @@ const sendOrder = async (contact, products) => {
                 products
             }
             // on se connecte avec l'API 
-            orderTeddies = () => {
+            orderTeddies = (validateOrder) => {
                 return new Promise((resolve) => {
                     var request = new XMLHttpRequest();
                     request.onreadystatechange = function () {
-                        if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+                        if (this.readyState == XMLHttpRequest.DONE && this.status == 201) {
                             resolve(JSON.parse(this.responseText));
                             console.log("Connecté");
                         }
@@ -127,27 +123,21 @@ const sendOrder = async (contact, products) => {
                         }
                     };
                     request.open("POST", "http://localhost:3000/api/teddies/order");
-                    request.send();
+                    request.setRequestHeader('Content-Type', 'application/json');
+                    request.send(validateOrder);
                 });
             };
            const validateOrder = JSON.stringify(order);
            const confirmationData =  await orderTeddies (validateOrder) // récupère les éléménents envoyés à  l'API
+            console.log(confirmationData)
            localStorage.setItem('order', JSON.stringify(confirmationData)) // Sauvegarde des éléments dans le local storage
-            validateOrder = displayConfirmLink
-            //lien vers page produit
-                document.location.href= "confirmation-orinounours" // 
-                const confirmLink = document.createElement('a');
-                confirmLink.setAttribute("href/confirmation-orinounours");
-                console.log('Merci pour votre commande - Vous allez être redirigé vers la page de confirmation')
-                return confirmLink
+           document.location.href = "confirmation-orinounours.html"
         
 
             //Une fois la commande effectuée retour à l'état initial des tableaux/objet/localStorage
             contact = {};
             products = [];
-            localStorage.clear();
+            //localStorage.clear();
         }
-    })
 }
-sendOrder()
 

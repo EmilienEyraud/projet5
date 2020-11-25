@@ -78,6 +78,7 @@
           </p>
           <div id="panier-recap">
             <p id="panierVide">Votre panier est vide</p>
+            <p id="totalPrice"></p>
           </div>
         </section>
         <section class="formulaire_commande">
@@ -105,18 +106,7 @@
                 <label for="ville"> Ville </label>
                 <input type="text" id="ville" name="ville" class="form-control" placeholder="Ex: Paris" required />
               </div>
-              <div class="form-group">
-                <label> Choix du moyen de paiement</label>
-                <div id="carte">
-                  <input type="radio" class="paiement" name="identifieur" value="Visa" checked/>
-                  <i class="fab fa-cc-visa fa-2x"></i>
-                  <input type="radio" class="paiement" name="identifieur" value="Mastercard"/>
-                  <i class="fab fa-cc-mastercard fa-2x"></i>
-                  <input type="radio" class="paiement" name="identifieur" value="Paypal"/>
-                  <i class="fab fa-cc-paypal fa-2x"></i>
-                </div>
-              </div>
-
+              
               <button id="commander" type="submit" name="commander" >
                 Commander
               </button>

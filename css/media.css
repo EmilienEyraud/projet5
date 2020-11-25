@@ -34,6 +34,15 @@
     #listeProduit h2 {
       font-size: 1.2em;
     }
+    .totalValide{
+      width: auto;
+    }
+    .totalAchat{
+      width: auto;
+    }
+    #commander{
+      font-size : 2rem
+    }
   }
   /*768*/
 
@@ -142,4 +151,14 @@
       align-items: center;
       border-top: 1px solid;
     }
+    .totalValide{
+      width: auto;
+    }
+    .totalAchat{
+      width: auto;
+    }
+    #commander{
+      font-size : 1.5rem
+    }
+
   }

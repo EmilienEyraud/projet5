@@ -4,9 +4,7 @@ function addProduct(id, color) { // ajouter un produit au panier
   const panier = list();
   panier[id] = color;
   console.log(panier)
-  for (let i = 0; i < panier.length; i++){ //Ajouter au panier
-  let nombrePanier = document.getElementById("indexPanier"); // ajout dans la barre de nav
-  nombrePanier.textContent = panier.length;}
+  for (let i = 0; i < panier.length; i++) //Ajouter au panier
   save(panier);
   console.log("Le produit a été ajouté au panier");
   alert("Ce produit a été ajouté dans votre panier");
@@ -14,10 +12,8 @@ function addProduct(id, color) { // ajouter un produit au panier
 
 function deleteProduct(id) { // supprimer un produit du panier
   const panier = list();
-  panier[id] = id;
-  for (let i = 0; i < panier.length; i--){ //Suppression du panier
-  let nombrePanier = document.getElementById("indexPanier"); // retrait dans la barre de nav
-  nombrePanier.textContent=panier.length;}
+  delete panier[id] ;
+  for (let i = 0; i < panier.length; i--) //Suppression du panier
   save(panier);
   console.log("Le produit a été supprimé du panier");
   alert("Ce produit a été supprimé de votre panier");

@@ -96,6 +96,7 @@ function displayProducts(products) {
     });
     //Incrémentation du montant du panier
     const totalLine = document.createElement('tr')
+    totalLine.setAttribute('class', 'totalValide')
     const totalLabel = document.createElement('td')
     totalLabel.textContent = "Total panier"
     const totalValue = document.createElement('td')

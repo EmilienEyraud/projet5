@@ -95,6 +95,7 @@ const displayShoppingCard = (saveProducts) => {
             productLinePrice.textContent = saveProducts[i].price / 100 + '€'
             const deleteButton =document.createElement ('button')
             deleteButton.textContent= 'Supprimer'
+            deleteButton.setAttribute('class','bouton-supprimer')
             recap.appendChild(productLine)
             
             productLine.appendChild(deleteButton)
@@ -116,6 +117,7 @@ const displayShoppingCard = (saveProducts) => {
 
        
         const totalLine = document.createElement('tr')
+        totalLine.setAttribute('class', 'totalAchat')
         const totalLabel = document.createElement('td')
         totalLabel.textContent = "Total panier"
         const totalValue = document.createElement('td')

@@ -151,6 +151,42 @@ a:hover {
   color: green;
 }
 
+#commander {
+  margin-top: 15px;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-family: "alexbrush, allura";
+  font-weight: bold;
+  color: #69402d;
+  border: 0.3rem solid;
+  padding: 1rem;
+  background-color: rgba(117, 190, 218, 0);
+  /* 0.0 - transparent */
+}
+#commander:hover {
+  cursor: pointer;
+  color: #a1068d;
+  border-style: #a1068d;
+}
+
+.totalValide {
+  padding-top: 25px;
+  color: #a1068d;
+  text-decoration: underline;
+  display: flex;
+  justify-content: flex-end;
+  width: 200%;
+}
+
+.totalAchat {
+  padding-top: 25px;
+  color: #a1068d;
+  text-decoration: underline;
+  display: flex;
+  justify-content: flex-end;
+  width: 250%;
+}
+
 .formulaire_commande,
 .recapitulatif {
   text-align: center;
@@ -198,11 +234,6 @@ form {
   flex-direction: column;
 }
 
-.paiement {
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
 input:invalid,
 textarea:invalid,
 select:invalid {
@@ -221,6 +252,22 @@ input:focus:invalid {
 #email {
   width: 70%;
   margin: auto;
+}
+
+.bouton-supprimer {
+  font-size: 1rem;
+  font-family: "alexbrush, allura";
+  font-weight: bold;
+  color: #69402d;
+  border: 0.2rem solid;
+  padding: 0.5rem;
+  background-color: rgba(117, 190, 218, 0);
+  /* 0.0 - transparent */
+}
+.bouton-supprimer:hover {
+  cursor: pointer;
+  color: #a1068d;
+  border-style: #a1068d;
 }
 
 #choix_option {
@@ -242,12 +289,21 @@ input:focus:invalid {
 }
 
 #ajout_panier {
+  margin-top: 15px;
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
+  font-family: "alexbrush, allura";
+  font-weight: bold;
+  color: #69402d;
+  border: 0.3rem solid;
+  padding: 1rem;
+  background-color: rgba(117, 190, 218, 0);
+  /* 0.0 - transparent */
 }
 #ajout_panier:hover {
   cursor: pointer;
   color: #a1068d;
+  border-style: #a1068d;
 }
 
 #marron {

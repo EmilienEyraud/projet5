@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-    <head>
+<html lang="fr">
+      <head>
         <meta charset="utf-8" />
         <title>Ours en peluche artisanaux faits à la main - Orinounours by Orinoco</title>
         <meta name="description" content="Ours en peluche faits à la main de qualité Française."/>
@@ -57,7 +58,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="panier-orinounours.html">
-                    <i class="fas fa-shopping-cart fa-1x"></i>Panier </a>
+                    <div class="fas fa-shopping-cart fa-1x"></div>Panier </a>
                   
                 </li>
               </ul>
@@ -68,6 +69,7 @@
 
       <main>
         <section id="detailProduit">
+          <h2>Détail du Produit</h2>
           <div id="detailOption">
             <p>Choisissez votre couleur :</p>
             <select name="option" id="choix_option" aria-required="true" aria-invalid="false" >
@@ -75,30 +77,36 @@
             </select>
           </div>
         </section>
-          <div class="button_panier">
+        <div class="button_panier">
               <div> 
-                
-                <button id="ajout_panier">Ajouter au Panier</button> 
+              <button id="ajout_panier">Ajouter au Panier</button> 
               </div>
           </div>
+          <div class="retourAccueil">
+            <div id="bouton-retour-accueil">
+            <a href="index.html">Retour Accueil</a>
+            </div>
+          </div>   
       </main>
 
       <footer>
         <div class="footer">
-            <div class="footer1">
-                <a href="index.html" id="accueil">
-                <img src="css/images/IconeOurs.jpg" alt="Icone Ours"/></a>  
-                <p>Copyright © 2020 Orinounours by Orinoco - Tous droits réservés</p>
-            </div>   
-            <div class="footer2">
-                <ul class="nav-item">
-                <a class="nav-link" href="https://groupe-socom.fr" id="creation">Une Création Groupe Socom</a>
-                </ul>
-                <ul class="nav-item">
-                 <a class="nav-link" href="mentions_legales.html" id="mentions_legales">Mentions Légales</a>
-                </ul>
-            </div>
-        </div>
+          <div class="footer1">
+              <a href="index.html" id="acceuil_footer">
+              <img src="css/images/IconeOurs.jpg" alt="Icone Ours"/></a>  
+              <p>Copyright © 2020 Orinounours by Orinoco - Tous droits réservés</p>
+          </div>   
+          <div class="footer2">
+            <ul class="header-navigation">
+              <li class="nav-item">
+              <a class="nav-link" href="https://groupe-socom.fr" id="creation">Une Création Groupe Socom</a>
+              </li>
+              <li class="nav-item">
+               <a class="nav-link" href="mentions_legales.html" id="mentions_legales">Mentions Légales</a>
+              </li>
+             </ul> 
+          </div>
+      </div>
       </footer>
 
       <!--Scipt JS-->
@@ -114,4 +122,4 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
-</html
+</html>

@@ -10,6 +10,80 @@
   font-weight: normal;
   font-style: normal;
 }
+.bouton-supprimer {
+  font-size: 1rem;
+  font-family: "alexbrush, allura";
+  font-weight: bold;
+  color: #69402d;
+  border: 0.2rem solid;
+  padding: 0.5rem;
+  background-color: rgba(117, 190, 218, 0);
+  /* 0.0 - transparent */
+}
+.bouton-supprimer:hover {
+  cursor: pointer;
+  color: #a1068d;
+}
+
+.button_panier {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+.button_panier a {
+  border: 0.3rem solid;
+  padding: 1rem;
+}
+
+#ajout_panier {
+  margin-top: 15px;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-family: "alexbrush, allura";
+  font-weight: bold;
+  color: #69402d;
+  border: 0.3rem solid;
+  padding: 1rem;
+  background-color: rgba(117, 190, 218, 0);
+  /* 0.0 - transparent */
+}
+#ajout_panier:hover {
+  cursor: pointer;
+  color: #a1068d;
+}
+
+.retourAccueil {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 2rem;
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+}
+.retourAccueil a {
+  border: 0.3rem solid;
+  padding: 1rem;
+}
+
+#bouton-retour-accueil {
+  margin-top: 15px;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-family: "alexbrush, allura";
+  font-weight: bold;
+  color: #69402d;
+  padding: 1rem;
+  background-color: rgba(117, 190, 218, 0);
+  /* 0.0 - transparent */
+}
+#bouton-retour-accueil:hover {
+  cursor: pointer;
+  color: #a1068d;
+}
+
 .header {
   display: flex;
   flex-direction: row;
@@ -166,7 +240,6 @@ a:hover {
 #commander:hover {
   cursor: pointer;
   color: #a1068d;
-  border-style: #a1068d;
 }
 
 .totalValide {
@@ -254,56 +327,9 @@ input:focus:invalid {
   margin: auto;
 }
 
-.bouton-supprimer {
-  font-size: 1rem;
-  font-family: "alexbrush, allura";
-  font-weight: bold;
-  color: #69402d;
-  border: 0.2rem solid;
-  padding: 0.5rem;
-  background-color: rgba(117, 190, 218, 0);
-  /* 0.0 - transparent */
-}
-.bouton-supprimer:hover {
-  cursor: pointer;
-  color: #a1068d;
-  border-style: #a1068d;
-}
-
 #choix_option {
   margin-bottom: 1rem;
   width: 100%;
-}
-
-.button_panier {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-right: 2rem;
-  margin-top: 2rem;
-  padding-bottom: 2rem;
-}
-.button_panier a {
-  border: 0.3rem solid;
-  padding: 1rem;
-}
-
-#ajout_panier {
-  margin-top: 15px;
-  margin-bottom: 1rem;
-  font-size: 2rem;
-  font-family: "alexbrush, allura";
-  font-weight: bold;
-  color: #69402d;
-  border: 0.3rem solid;
-  padding: 1rem;
-  background-color: rgba(117, 190, 218, 0);
-  /* 0.0 - transparent */
-}
-#ajout_panier:hover {
-  cursor: pointer;
-  color: #a1068d;
-  border-style: #a1068d;
 }
 
 #marron {

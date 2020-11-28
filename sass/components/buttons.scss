@@ -1,0 +1,72 @@
+.bouton-supprimer{
+    font-size: 1rem;
+    font-family: $font-family;
+    font-weight: bold;
+    color: $color-primary;
+    border :0.2rem solid;
+    padding: 0.5rem;
+    background-color: rgba(117, 190, 218, 0.0); /* 0.0 - transparent */
+    &:hover {
+      cursor: pointer;
+      color: $color-hover;
+      
+    }
+  }
+
+  
+  .button_panier{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    a {
+      border: 0.3rem solid ;
+      padding: 1rem;
+    }
+     }
+  #ajout_panier {
+  margin-top: 15px;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-family: $font-family;
+  font-weight: bold;
+  color: $color-primary;
+  border :0.3rem solid;
+  padding: 1rem;
+  background-color: rgba(117, 190, 218, 0.0); /* 0.0 - transparent */
+  &:hover {
+    cursor: pointer;
+    color: $color-hover;
+    
+  }
+}
+.retourAccueil{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 2rem;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
+    a {
+        border: 0.3rem solid ;
+        padding: 1rem;
+      }
+     }
+  #bouton-retour-accueil {
+  margin-top: 15px;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-family: $font-family;
+  font-weight: bold;
+  color: $color-primary;
+  
+  padding: 1rem;
+  background-color: rgba(117, 190, 218, 0.0); /* 0.0 - transparent */
+  &:hover {
+    cursor: pointer;
+    color: $color-hover;
+    
+  }
+} 

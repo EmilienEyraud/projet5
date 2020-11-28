@@ -72,7 +72,7 @@ const displayShoppingCard = (saveProducts) => {
         recapRemove.textContent = 'Prix unitaire'
         const lineTotalPrice = document.createElement('tr')
         const totalPrice = document.createElement('th')
-        lineTotalPrice.appendChild(totalPrice)
+        
         rootElement.appendChild(recap)
         recap.appendChild(lineTable)
         recap.appendChild(lineTotalPrice)
@@ -80,6 +80,7 @@ const displayShoppingCard = (saveProducts) => {
         lineTable.appendChild(recapName)
         lineTable.appendChild(recapUnitPrice)
         lineTable.appendChild(recapRemove)
+        lineTotalPrice.appendChild(totalPrice)
 
         // Affichage des articles dans le panier - On utilise la boucle for    
         for (let i = 0; saveProducts.length > i; i++) {

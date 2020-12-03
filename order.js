@@ -26,19 +26,13 @@ async function init() {
     document.getElementById("firstName").innerHTML = order.contact.firstName;
     displayOrderId(order.orderId) // afficher le numéro de commande
     displayProducts(order.products)//afficher le détail des produits commandés
-    displayTotal(order.products) //afficher le total de la commande
-
-
     localStorage.clear();
   }
-
   else {
     document.getElementsById('confirmation-recap');
     document.textContent("Vous n'avez rien en commande")
   }
-
 };
-
 init()
 
 function displayOrderId(id) {
@@ -107,19 +101,6 @@ function displayProducts(products) {
     totalLine.appendChild(totalValue)
   }
 }
-//function displayTotal(products) {
-  //document.getElementById('total-commande')
-  //const total = calculateTotal(products)
-  //total.textContent = total + '€'
-  //console.log("total de commande", total)
-//}
-//function calculateTotal(products) {
-  //let total = 0
-  //for (let product of products) {
-    //total += product.price
-  //}
-  //return total
-//}
 
 
 
